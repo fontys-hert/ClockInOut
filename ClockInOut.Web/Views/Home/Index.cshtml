@@ -1,0 +1,31 @@
+﻿@model ClockViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    int DoIets(int x) { // in meeste gevallen niet netjes
+        return x * 2;
+    }
+}
+
+<h1>Welkom bij de klokmachine @DoIets(2)</h1>
+
+<form method="post">
+    @Html.ValidationSummary()
+    <p>
+        <label asp-for="Name">Naam</label>
+        <input asp-for="Name" type="text" placeholder="Voer je naam in..." />
+    </p>
+    <p>
+        <input type="submit" value="Klok in" />
+    </p>
+</form>
+
+@if (Model != null)
+{
+    <section>
+        <h2>Ingeklokt!</h2>
+        <p>@Model.Name is ingeklokt op @Model.DateClocked</p>
+    </section>
+}
