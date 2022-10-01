@@ -20,11 +20,66 @@ while (true)
     Console.WriteLine("Wat is je naam:");
     string? name = Console.ReadLine();
 
-    clocker.ClockInOut(null);
-
+    clocker.ClockInOut(name);
 
     var clockedInStatus = clocker.GetClockStatus();
     Console.WriteLine($"Op dit moment zijn ingeklokt: {clockedInStatus}");
 }
 
 Console.WriteLine("Einde van het programa");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var clockMachine = new ClockMachine();
+
+while (true)
+{
+    Console.WriteLine("Enter your name:");
+    string? name = Console.ReadLine();
+    if (string.IsNullOrWhiteSpace(name)) continue;
+
+    if (clockMachine.IsClockedIn(name))
+    {
+        var entry = clockMachine.ClockOut(name);
+        Console.WriteLine($"Clocked out at {entry.OutAt}!");
+        Console.WriteLine($"Worked {entry.WorkedSeconds} seconds");
+    }
+    else
+    {
+        var entry = clockMachine.ClockIn(name);
+        Console.WriteLine($"Clocked in at {entry.InAt}!");
+    }
+
+    Console.WriteLine();
+
+    Console.WriteLine(clockMachine.GetStatus());
+
+    Console.WriteLine();
+}
+
+
+
+
+
+
