@@ -10,46 +10,6 @@
 //8. (Bonus) show the clock duration when clocking out
 
 using ClockInOut.Bll;
-using ClockInOut.Presentation;
-
-var logger = new Logger();
-var clocker = new Clocker(logger);
-
-while (true)
-{
-    Console.WriteLine("Wat is je naam:");
-    string? name = Console.ReadLine();
-
-    clocker.ClockInOut(name);
-
-    var clockedInStatus = clocker.GetClockStatus();
-    Console.WriteLine($"Op dit moment zijn ingeklokt: {clockedInStatus}");
-}
-
-Console.WriteLine("Einde van het programa");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var clockMachine = new ClockMachine();
 
@@ -77,9 +37,4 @@ while (true)
 
     Console.WriteLine();
 }
-
-
-
-
-
 
