@@ -20,7 +20,7 @@ while (true)
     Console.WriteLine("Wat is je naam:");
     string? name = Console.ReadLine();
 
-    clocker.ClockInOut(null);
+    clocker.ClockInOut(name);
 
 
     var clockedInStatus = clocker.GetClockStatus();
